@@ -1,70 +1,103 @@
-# Getting Started with Create React App
+# Grohance Admin Orders Page
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a solution to the technical challenge for the Software Engineer position at Grohance. The goal was to design and develop an orders page for the admin panel of Grohance's e-commerce platform, utilizing the WooCommerce REST API to fetch and update orders.
 
-## Available Scripts
+## Live Demo
 
-In the project directory, you can run:
+You can view the live demo of the project [here](https://your-live-demo-link.com).
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **API Integration**: Utilizes the WooCommerce REST API to fetch and display order details.
+- **Order Item Quantity Editing**: Allows admins to edit the quantity of individual order items directly on the page.
+- **Automatic Order Total Update**: Updates the order total dynamically based on the changes in item quantities.
+- **Pagination**: Displays 10 orders per page, with functionality to navigate through pages.
+- **Search and Filter**: Includes search functionality and filtering by order status to enhance usability.
+- **User-Friendly Design**: Designed with a focus on clear information hierarchy and an intuitive interface.
+- **Error Handling**: Implements proper error handling for API calls and updates.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Technologies Used
 
-### `npm test`
+- **React**: For building the user interface.
+- **Axios**: For making API calls to the WooCommerce REST API.
+- **CSS**: For styling the components.
+- **WooCommerce REST API**: For fetching and updating order data.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Installation
 
-### `npm run build`
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/your-username/grohance-admin-orders-page.git
+    ```
+2. Navigate to the project directory:
+    ```bash
+    cd grohance-admin-orders-page
+    ```
+3. Install dependencies:
+    ```bash
+    npm install
+    ```
+4. Create a `.env` file in the root directory and add your WooCommerce API credentials:
+    ```env
+    REACT_APP_API_KEY=your_api_key
+    REACT_APP_API_SECRET=your_api_secret
+    ```
+5. Start the development server:
+    ```bash
+    npm start
+    ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Usage
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- The orders page fetches and displays a list of orders from the WooCommerce API.
+- Admins can edit the quantity of individual order items. The order total updates automatically.
+- Pagination controls allow navigation through the list of orders.
+- The search bar allows filtering orders by customer name.
+- A dropdown menu provides filtering by order status.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Code Overview
 
-### `npm run eject`
+### Components
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- **Orders**: The main component that fetches orders and handles pagination.
+- **OrderItems**: A component to display and edit individual order items.
+- **Pagination**: A component to handle pagination controls.
+- **Loader**: A component to show a loading spinner while fetching data.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### API Integration
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- **Fetching Orders**: Uses Axios to fetch orders from the WooCommerce REST API.
+- **Updating Orders**: Sends updated order details back to the API when quantities are edited.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### State Management
 
-## Learn More
+- Uses React's state management to handle the list of orders, current page, and updates effectively.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Security Considerations
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- **Authentication**: Uses secure authentication when interacting with the WooCommerce API.
+- **Error Handling**: Manages potential issues gracefully, such as network errors or invalid data inputs.
 
-### Code Splitting
+## Screenshots
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+![Orders Page](link-to-screenshot-1)
+![Edit Quantity](link-to-screenshot-2)
+![Pagination](link-to-screenshot-3)
 
-### Analyzing the Bundle Size
+## Future Enhancements
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- Implement additional filters for date range and order amount.
+- Enhance the search functionality to include more fields.
+- Improve the UI/UX based on user feedback.
 
-### Making a Progressive Web App
+## Contributing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+If you would like to contribute to this project, please fork the repository and submit a pull request with your changes.
 
-### Advanced Configuration
+## License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+This project is licensed under the MIT License.
 
-### Deployment
+## Contact
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+For any questions or feedback, please reach out to [your-email@example.com].
