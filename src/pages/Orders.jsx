@@ -104,7 +104,7 @@ const Orders = () => {
                 : item?.billing?.first_name.toLowerCase().includes(search);
             })
             .map((item, index) => {
-              return <OrderItems key={index} item={item} />;
+              return <OrderItems key={index} item={item} setIsLoading={setIsLoading}/>;
             })}
             </tbody>
         </table>

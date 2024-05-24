@@ -3,7 +3,7 @@ import formatDate from "../helper/formatDate";
 import getCurrencySymbol from "../helper/getCurrencySymbol";
 import api from "../utils/axios";
 
-const OrderItems = ({ item }) => {
+const OrderItems = ({ item ,setIsLoading}) => {
   const [lineItems, setLineItems] = useState(item.line_items);
   const [total, setTotal] = useState(item.total);
 
@@ -22,6 +22,7 @@ const OrderItems = ({ item }) => {
 
   const updateOrder = async () => {
     try {
+      setIsLoading(true)
       const updatedLineItems = lineItems.map((item) => ({
         id: item.id,
         quantity: item.quantity,
@@ -32,9 +33,11 @@ const OrderItems = ({ item }) => {
       };
 
       await api.put(`orders/${item.id}`, updatedOrder);
+      setIsLoading(false)
 
       alert("Order updated successfully");
     } catch (error) {
+      setIsLoading(false)
       console.error("Error updating order:", error);
       alert("Failed to update order");
     }
